@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abitech Pros</title>
+
+  <!-- Tailwind Compiled CSS -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- NAVBAR -->
+  <nav class="bg-white shadow-lg px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+    <h1 class="text-2xl font-bold">Abitech Pros</h1>
+
+    <div class="space-x-6 hidden md:flex">
+      <a href="#" class="hover:text-blue-500">Home</a>
+      <a href="#tools" class="hover:text-blue-500">Tools</a>
+      <a href="https://abitechpros.com" class="hover:text-blue-500" target="_blank">Blog</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="text-center py-20 bg-gradient-to-br from-blue-600 to-blue-400 text-white">
+    <h2 class="text-4xl font-bold mb-4">Useful Tools for Students & Developers</h2>
+    <p class="text-lg opacity-90">Fast. Free. Built by AbitechPros.</p>
+  </header>
+
+  <!-- TOOLS SECTION -->
+  <section id="tools" class="max-w-6xl mx-auto px-6 py-16">
+    <h3 class="text-3xl font-bold mb-10">Tools Collection</h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- TOOL CARD -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition cursor-pointer"
+           onclick="window.location='tool-pages/text-counter.html'">
+        <h4 class="text-xl font-bold mb-2">Text Counter</h4>
+        <p class="text-gray-600 text-sm">Counts words, characters, and reading time.</p>
+      </div>
+
+      <!-- TOOL CARD -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition cursor-pointer"
+           onclick="window.location='tool-pages/qr-generator.html'">
+        <h4 class="text-xl font-bold mb-2">QR Code Generator</h4>
+        <p class="text-gray-600 text-sm">Generate QR codes instantly.</p>
+      </div>
+
+      <!-- TOOL CARD -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition cursor-pointer"
+           onclick="window.location='tool-pages/password-generator.html'">
+        <h4 class="text-xl font-bold mb-2">Password Generator</h4>
+        <p class="text-gray-600 text-sm">Create secure, random passwords.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-300 text-center py-6 mt-20">
+    <p>© 2025 Abitech Pros — All rights reserved.</p>
+  </footer>
+
+  <script src="../scripts/app.js"></script>
+</body>
+</html>

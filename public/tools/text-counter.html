@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Counter | Abitech Tools</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="bg-gray-100 p-8">
+  <a href="../index.html" class="text-blue-600">&larr; Back</a>
+
+  <h1 class="text-3xl font-bold mt-6 mb-4">Text Counter</h1>
+
+  <textarea id="textInput" 
+            class="w-full h-48 p-4 rounded-lg border border-gray-300"
+            placeholder="Type text here..."></textarea>
+
+  <div class="mt-6 bg-white p-6 rounded-xl shadow">
+    <p><strong>Characters:</strong> <span id="charCount">0</span></p>
+    <p><strong>Words:</strong> <span id="wordCount">0</span></p>
+    <p><strong>Reading Time:</strong> <span id="readTime">0 sec</span></p>
+  </div>
+
+  <script>
+    const textArea = document.getElementById('textInput');
+    const charCount = document.getElementById('charCount');
+    const wordCount = document.getElementById('wordCount');
+    const readTime = document.getElementById('readTime');
+
+    textArea.addEventListener('input', () => {
+      const text = textArea.value;
+
+      charCount.textContent = text.length;
+      wordCount.textContent = text.trim().split(/\s+/).filter(Boolean).length;
+      readTime.textContent = Math.ceil(wordCount.textContent / 3) + " sec";
+    });
+  </script>
+</body>
+</html>
