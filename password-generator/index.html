@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator - Abitech Pros</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    
+    <!-- Tailwind Compiled CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .slider {
+            flex: 1;
+            height: 6px;
+            border-radius: 3px;
+            background: #e0e0e0;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #2563eb;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #2563eb;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-lg px-6 py-3 flex justify-between items-center sticky top-0 z-50">
+        <a href="https://tools.abitechpros.com" class="flex items-center">
+            <img src="../assets/abitechpros-logo.png" alt="Abitech Pros" class="hover:opacity-80 transition" style="height: 45px; width: auto; max-width: 200px; object-fit: contain;" />
+        </a>
+
+        <div class="space-x-6 hidden md:flex">
+            <a href="../index.html" class="hover:text-blue-600 transition-colors font-medium">Home</a>
+            <a href="../about.html" class="hover:text-blue-600 transition-colors font-medium">About</a>
+            <a href="../contact.html" class="hover:text-blue-600 transition-colors font-medium">Contact</a>
+            <a href="https://abitechpros.com" class="hover:text-blue-600 transition-colors font-medium" target="_blank">Blog</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="text-center py-24 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 text-white">
+        <h2 class="text-5xl font-bold mb-4">Password Generator</h2>
+        <p class="text-xl opacity-90">Create strong, secure passwords instantly</p>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-4xl mx-auto px-6 py-20">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+            
+            <!-- Password Display -->
+            <div class="flex gap-4 mb-8">
+                <div class="flex-1 p-4 font-mono text-xl border-2 border-gray-200 rounded-xl bg-gray-50 break-all min-h-[60px] flex items-center" id="passwordOutput">
+                    Click generate to create a password
+                </div>
+                <button class="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-xl font-medium transition-all" id="copyBtn" title="Copy to clipboard">
+                    📋 Copy
+                </button>
+            </div>
+
+            <!-- Password Length -->
+            <div class="mb-8">
+                <label for="lengthSlider" class="block mb-3 font-semibold text-gray-900">
+                    Password Length: <span class="text-blue-600" id="lengthValue">16</span>
+                </label>
+                <div class="flex items-center gap-4">
+                    <input type="range" min="8" max="32" value="16" class="slider" id="lengthSlider">
+                </div>
+            </div>
+
+            <!-- Character Types -->
+            <div class="mb-8">
+                <label class="block mb-4 font-semibold text-gray-900">Character Types:</label>
+                <div class="space-y-3">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" id="uppercaseCheck" checked class="w-5 h-5 cursor-pointer accent-blue-600">
+                        <span class="text-gray-700">Uppercase Letters (A-Z)</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" id="lowercaseCheck" checked class="w-5 h-5 cursor-pointer accent-blue-600">
+                        <span class="text-gray-700">Lowercase Letters (a-z)</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" id="numbersCheck" checked class="w-5 h-5 cursor-pointer accent-blue-600">
+                        <span class="text-gray-700">Numbers (0-9)</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" id="symbolsCheck" checked class="w-5 h-5 cursor-pointer accent-blue-600">
+                        <span class="text-gray-700">Symbols (!@#$%^&*)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Generate Button -->
+            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-semibold text-lg transition-all shadow-lg hover:shadow-xl" id="generateBtn">
+                🔐 Generate Password
+            </button>
+
+            <!-- Strength Meter -->
+            <div class="mt-6 p-4 rounded-xl text-center font-semibold hidden" id="strengthMeter">
+                Password Strength: <span id="strengthText">Strong</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-300 mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+
+            <!-- GRID -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-12">
+
+                <!-- Logo -->
+                <div class="col-span-2 sm:col-span-1">
+                    <img src="../assets/abitechpros-logo.png" 
+                         alt="Abitech Pros" 
+                         class="h-8 w-auto mb-4 brightness-0 invert" />
+                    <p class="text-sm text-gray-400 mt-4">
+                        Free tools for students & developers
+                    </p>
+                </div>
+
+                <!-- Column 1 -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+                        Quick Links
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="../index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="../index.html#tools" class="hover:text-white">Tools</a></li>
+                        <li><a href="../about.html" class="hover:text-white">About</a></li>
+                        <li><a href="../contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+                        Legal
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="../terms.html" class="hover:text-white">Disclaimer</a></li>
+                        <li><a href="../privacy.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="../help.html" class="hover:text-white">Help</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
+                        Tools
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="../text-counter/" class="hover:text-white">Text Counter</a></li>
+                        <li><a href="../qr-code-generator/" class="hover:text-white">QR Code Generator</a></li>
+                        <li><a href="../password-generator/" class="hover:text-white">Password Generator</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
+                <p>
+                    © Copyright for this site: 
+                    <a href="https://abitechpros.com" class="hover:text-white">abitechpros.com</a>
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        const lengthSlider = document.getElementById('lengthSlider');
+        const lengthValue = document.getElementById('lengthValue');
+        const uppercaseCheck = document.getElementById('uppercaseCheck');
+        const lowercaseCheck = document.getElementById('lowercaseCheck');
+        const numbersCheck = document.getElementById('numbersCheck');
+        const symbolsCheck = document.getElementById('symbolsCheck');
+        const generateBtn = document.getElementById('generateBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const passwordOutput = document.getElementById('passwordOutput');
+        const strengthMeter = document.getElementById('strengthMeter');
+        const strengthText = document.getElementById('strengthText');
+
+        const charSets = {
+            uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            lowercase: 'abcdefghijklmnopqrstuvwxyz',
+            numbers: '0123456789',
+            symbols: '!@#$%^&*()_+-=[]{}|;:,.<>?'
+        };
+
+        lengthSlider.addEventListener('input', (e) => {
+            lengthValue.textContent = e.target.value;
+        });
+
+        generateBtn.addEventListener('click', generatePassword);
+
+        copyBtn.addEventListener('click', () => {
+            const password = passwordOutput.textContent;
+            if (password && password !== 'Click generate to create a password') {
+                navigator.clipboard.writeText(password).then(() => {
+                    copyBtn.textContent = '✅ Copied!';
+                    setTimeout(() => {
+                        copyBtn.textContent = '📋 Copy';
+                    }, 2000);
+                });
+            }
+        });
+
+        function generatePassword() {
+            let charset = '';
+            let charTypes = 0;
+
+            if (uppercaseCheck.checked) { charset += charSets.uppercase; charTypes++; }
+            if (lowercaseCheck.checked) { charset += charSets.lowercase; charTypes++; }
+            if (numbersCheck.checked) { charset += charSets.numbers; charTypes++; }
+            if (symbolsCheck.checked) { charset += charSets.symbols; charTypes++; }
+
+            if (charset === '') {
+                alert('Please select at least one character type!');
+                return;
+            }
+
+            const length = parseInt(lengthSlider.value);
+            let password = '';
+
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset[randomIndex];
+            }
+
+            passwordOutput.textContent = password;
+            updateStrength(length, charTypes);
+        }
+
+        function updateStrength(length, charTypes) {
+            const strengthMeter = document.getElementById('strengthMeter');
+            const strengthText = document.getElementById('strengthText');
+            
+            strengthMeter.classList.remove('hidden');
+            
+            // Better strength calculation
+            let score = 0;
+            
+            // Length contribution (max 50 points)
+            if (length >= 16) score += 50;
+            else if (length >= 12) score += 35;
+            else if (length >= 8) score += 20;
+            else score += 10;
+            
+            // Character diversity contribution (max 50 points)
+            score += charTypes * 12.5;
+            
+            strengthMeter.classList.remove('bg-red-50', 'text-red-600', 'bg-orange-50', 'text-orange-600', 'bg-green-50', 'text-green-600');
+            
+            if (score < 40) {
+                strengthMeter.classList.add('bg-red-50', 'text-red-600');
+                strengthText.textContent = 'Weak';
+            } else if (score < 70) {
+                strengthMeter.classList.add('bg-orange-50', 'text-orange-600');
+                strengthText.textContent = 'Medium';
+            } else {
+                strengthMeter.classList.add('bg-green-50', 'text-green-600');
+                strengthText.textContent = 'Strong';
+            }
+        }
+    </script>
+</body>
+</html>

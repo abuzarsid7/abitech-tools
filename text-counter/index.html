@@ -1,38 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Text Counter | Abitech Tools</title>
-  <link rel="stylesheet" href="../styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Counter - Abitech Pros</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
 </head>
-<body class="bg-gray-100 p-8">
+<body class="bg-gray-100 min-h-screen text-gray-800">
+    
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-lg px-6 py-3 flex justify-between items-center sticky top-0 z-50">
+        <a href="../index.html" class="flex items-center">
+            <img src="../assets/abitechpros-logo.png" alt="Abitech Pros" class="hover:opacity-80 transition" style="height: 45px; width: auto; max-width: 200px; object-fit: contain;" />
+        </a>
+        <div class="space-x-6 hidden md:flex">
+            <a href="../index.html" class="hover:text-blue-600 transition-colors font-medium">Home</a>
+            <a href="../about.html" class="hover:text-blue-600 transition-colors font-medium">About</a>
+            <a href="../contact.html" class="hover:text-blue-600 transition-colors font-medium">Contact</a>
+            <a href="https://abitechpros.com" class="hover:text-blue-600 transition-colors font-medium" target="_blank">Blog</a>
+        </div>
+    </nav>
 
-  <h1 class="text-3xl font-bold mt-6 mb-4">Text Counter</h1>
+    <!-- HERO SECTION -->
+    <header class="text-center py-16 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 text-white">
+        <h1 class="text-5xl font-bold mb-4">Text Counter</h1>
+        <p class="text-xl opacity-90">Count words, characters, sentences, and reading time</p>
+    </header>
 
-  <textarea id="textInput" 
-            class="w-full h-48 p-4 rounded-lg border border-gray-300"
-            placeholder="Type text here..."></textarea>
+    <!-- MAIN CONTENT -->
+    <section class="max-w-4xl mx-auto px-6 py-16">
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+            
+            <div class="space-y-6">
+                <div>
+                    <label for="text-input" class="block text-sm font-semibold text-gray-700 mb-2">Enter Your Text</label>
+                    <textarea 
+                        id="text-input" 
+                        rows="10"
+                        placeholder="Start typing or paste your text here..."
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none"
+                    ></textarea>
+                </div>
+                
+                <!-- Statistics Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                    <div class="bg-blue-50 rounded-xl p-4 text-center border border-blue-100">
+                        <div class="text-3xl font-bold text-blue-600" id="word-count">0</div>
+                        <div class="text-sm text-gray-600 mt-1">Words</div>
+                    </div>
+                    <div class="bg-green-50 rounded-xl p-4 text-center border border-green-100">
+                        <div class="text-3xl font-bold text-green-600" id="char-count">0</div>
+                        <div class="text-sm text-gray-600 mt-1">Characters</div>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-4 text-center border border-purple-100">
+                        <div class="text-3xl font-bold text-purple-600" id="sentence-count">0</div>
+                        <div class="text-sm text-gray-600 mt-1">Sentences</div>
+                    </div>
+                    <div class="bg-orange-50 rounded-xl p-4 text-center border border-orange-100">
+                        <div class="text-3xl font-bold text-orange-600" id="reading-time">0</div>
+                        <div class="text-sm text-gray-600 mt-1">Min Read</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="mt-6 bg-white p-6 rounded-xl shadow">
-    <p><strong>Characters:</strong> <span id="charCount">0</span></p>
-    <p><strong>Words:</strong> <span id="wordCount">0</span></p>
-    <p><strong>Reading Time:</strong> <span id="readTime">0 sec</span></p>
-  </div>
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-300 mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-12">
+                <!-- Logo -->
+                <div class="col-span-2 sm:col-span-1">
+                    <img src="../assets/abitechpros-logo.png" alt="Abitech Pros" class="h-8 w-auto mb-4 brightness-0 invert" />
+                    <p class="text-sm text-gray-400 mt-4">Free tools for students & developers</p>
+                </div>
+                
+                <!-- Column 1 -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Quick Links</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="../index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="../index.html#tools" class="hover:text-white transition">Tools</a></li>
+                        <li><a href="../about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="../contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Legal</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="../terms.html" class="hover:text-white transition">Disclaimer</a></li>
+                        <li><a href="../privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="../help.html" class="hover:text-white transition">Help</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Tools</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="../text-counter/" class="hover:text-white transition">Text Counter</a></li>
+                        <li><a href="../qr-code-generator/" class="hover:text-white transition">QR Generator</a></li>
+                        <li><a href="../password-generator/" class="hover:text-white transition">Password Gen</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
+                <p>© Copyright for this site: <a href="https://abitechpros.com" class="hover:text-white transition">abitechpros.com</a></p>
+            </div>
+        </div>
+    </footer>
 
-  <script>
-    const textArea = document.getElementById('textInput');
-    const charCount = document.getElementById('charCount');
-    const wordCount = document.getElementById('wordCount');
-    const readTime = document.getElementById('readTime');
-
-    textArea.addEventListener('input', () => {
-      const text = textArea.value;
-
-      charCount.textContent = text.length;
-      wordCount.textContent = text.trim().split(/\s+/).filter(Boolean).length;
-      readTime.textContent = Math.ceil(wordCount.textContent / 3) + " sec";
-    });
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
