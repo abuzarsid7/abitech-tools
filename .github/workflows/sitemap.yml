@@ -17,7 +17,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Debug: List HTML files
+      - name: Debug List HTML files
         run: |
           echo "Listing all index.html files:"
           find . -type f -name "index.html"
