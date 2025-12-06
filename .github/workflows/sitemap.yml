@@ -1,5 +1,8 @@
 name: Generate Sitemap
 
+permissions:
+  contents: write
+
 on:
   push:
     branches:
@@ -14,21 +17,22 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      - name: Debug: List HTML files
+        run: |
+          echo "Listing all index.html files:"
+          find . -type f -name "index.html"
+
       - name: Generate sitemap.xml
         run: |
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
           
-          # Loop through all index.html files
-          for file in $(find . -type f -name "index.html"); do
-            # Remove leading './'
+          # Generate URLs only from index.html files
+          while IFS= read -r file; do
             clean="${file#./}"
-
-            # Remove trailing 'index.html' to create clean URLs
             path="${clean%index.html}"
-
             echo "  <url><loc>https://tools.abitechpros.com/${path}</loc></url>" >> sitemap.xml
-          done
+          done <<< "$(find . -type f -name "index.html")"
 
           echo '</urlset>' >> sitemap.xml
 
