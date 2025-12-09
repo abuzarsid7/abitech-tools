@@ -6,6 +6,8 @@
     <title>Strong Password Generator - Random Secure Password Maker | Abitech Pros</title>
     <meta name="description" content="Free strong password generator online. Create random, secure passwords instantly with customizable length and character types. 100% secure - passwords generated in your browser.">
     <meta name="keywords" content="strong password generator, random password generator, secure password online, password maker, password creator, generate strong password, create secure password, random password maker, password generator online free, complex password generator">
+    <link rel="canonical" href="https://tools.abitechpros.com/password-generator/">
+    <meta name="robots" content="index, follow">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     
     <!-- Tailwind Compiled CSS -->
@@ -507,6 +509,44 @@
             symbols: '!@#$%^&*()_+-=[]{}|;:,.<>?'
         };
 
+        /**
+         * Cryptographically secure random integer generator
+         * Returns a random integer in the range [0, max)
+         * Uses Web Crypto API for true randomness
+         */
+        function secureRandomInt(max) {
+            // Create a typed array to hold random values
+            const randomBuffer = new Uint32Array(1);
+            
+            // Generate cryptographically secure random values
+            window.crypto.getRandomValues(randomBuffer);
+            
+            // Convert to a value in range [0, max)
+            // Use modulo bias elimination technique
+            const randomValue = randomBuffer[0];
+            const range = max;
+            const maxValidValue = Math.floor(0xFFFFFFFF / range) * range;
+            
+            // Reject values that would cause modulo bias
+            if (randomValue >= maxValidValue) {
+                return secureRandomInt(max); // Retry with new random value
+            }
+            
+            return randomValue % range;
+        }
+
+        /**
+         * Cryptographically secure Fisher-Yates shuffle
+         * Shuffles array in place using Web Crypto API
+         */
+        function secureShuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = secureRandomInt(i + 1);
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
         lengthSlider.addEventListener('input', (e) => {
             lengthValue.textContent = e.target.value;
         });
@@ -526,29 +566,61 @@
         });
 
         function generatePassword() {
-            let charset = '';
-            let charTypes = 0;
+            // Collect selected character sets
+            const selectedSets = [];
+            
+            if (uppercaseCheck.checked) {
+                selectedSets.push({ name: 'uppercase', chars: charSets.uppercase });
+            }
+            if (lowercaseCheck.checked) {
+                selectedSets.push({ name: 'lowercase', chars: charSets.lowercase });
+            }
+            if (numbersCheck.checked) {
+                selectedSets.push({ name: 'numbers', chars: charSets.numbers });
+            }
+            if (symbolsCheck.checked) {
+                selectedSets.push({ name: 'symbols', chars: charSets.symbols });
+            }
 
-            if (uppercaseCheck.checked) { charset += charSets.uppercase; charTypes++; }
-            if (lowercaseCheck.checked) { charset += charSets.lowercase; charTypes++; }
-            if (numbersCheck.checked) { charset += charSets.numbers; charTypes++; }
-            if (symbolsCheck.checked) { charset += charSets.symbols; charTypes++; }
-
-            if (charset === '') {
+            if (selectedSets.length === 0) {
                 alert('Please select at least one character type!');
                 return;
             }
 
             const length = parseInt(lengthSlider.value);
-            let password = '';
-
-            for (let i = 0; i < length; i++) {
-                const randomIndex = Math.floor(Math.random() * charset.length);
-                password += charset[randomIndex];
+            
+            // Validate that password length is sufficient for all required character types
+            if (length < selectedSets.length) {
+                alert(`Password length must be at least ${selectedSets.length} to include all selected character types!`);
+                return;
             }
 
+            // Step 1: Ensure at least one character from each selected set
+            const passwordArray = [];
+            
+            for (const set of selectedSets) {
+                const randomIndex = secureRandomInt(set.chars.length);
+                passwordArray.push(set.chars[randomIndex]);
+            }
+
+            // Step 2: Fill remaining length with random characters from all selected sets
+            const allChars = selectedSets.map(set => set.chars).join('');
+            const remainingLength = length - selectedSets.length;
+            
+            for (let i = 0; i < remainingLength; i++) {
+                const randomIndex = secureRandomInt(allChars.length);
+                passwordArray.push(allChars[randomIndex]);
+            }
+
+            // Step 3: Securely shuffle the password array using Fisher-Yates
+            // This prevents the guaranteed characters from always being at the start
+            secureShuffle(passwordArray);
+
+            // Convert array to string
+            const password = passwordArray.join('');
+
             passwordOutput.textContent = password;
-            updateStrength(length, charTypes);
+            updateStrength(length, selectedSets.length);
         }
 
         function updateStrength(length, charTypes) {
