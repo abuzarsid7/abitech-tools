@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Markdown to PDF Converter - Convert MD to PDF Online | Abitech Pros</title>
+    <meta name="description" content="Free online Markdown to PDF converter. Convert your .md files to professionally formatted PDF documents instantly. Supports GitHub Flavored Markdown, tables, code blocks, and more.">
+    <meta name="keywords" content="markdown to pdf, md to pdf converter, convert markdown, markdown pdf generator, github markdown pdf, markdown converter online, md file to pdf, markdown export pdf">
+    <link rel="canonical" href="https://tools.abitechpros.com/markdown-to-pdf/">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-gray-100 min-h-screen text-gray-800">
+    
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-lg px-6 py-3 flex justify-between items-center sticky top-0 z-50">
+        <a href="https://tools.abitechpros.com" class="flex items-center">
+            <img src="../assets/abitechpros-logo.png" alt="Abitech Pros" class="hover:opacity-80 transition" style="height: 45px; width: auto; max-width: 200px; object-fit: contain;" />
+        </a>
+        <div class="space-x-6 hidden md:flex">
+            <a href="../index.html" class="hover:text-blue-600 transition-colors font-medium">Home</a>
+            <a href="../about.html" class="hover:text-blue-600 transition-colors font-medium">About</a>
+            <a href="../contact.html" class="hover:text-blue-600 transition-colors font-medium">Contact</a>
+            <a href="https://abitechpros.com" class="hover:text-blue-600 transition-colors font-medium" target="_blank">Blog</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="text-center py-16 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 text-white">
+        <h1 class="text-5xl font-bold mb-4">Free Markdown to PDF Converter</h1>
+        <p class="text-xl opacity-90">Convert your Markdown files to beautifully formatted PDF documents</p>
+        <p class="text-base opacity-80 mt-2">Supports GitHub Flavored Markdown, tables, code blocks, and more</p>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <section class="max-w-4xl mx-auto px-6 py-16">
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+            
+            <div class="space-y-6">
+                <!-- Markdown Input -->
+                <div>
+                    <label for="markdown-input" class="block text-sm font-semibold text-gray-700 mb-2">Enter Markdown</label>
+                    <textarea 
+                        id="markdown-input" 
+                        rows="12"
+                        placeholder="# Welcome to Markdown to PDF Converter
+
+Start typing your **Markdown** here or paste your content...
+
+## Features
+- Supports GitHub Flavored Markdown
+- Code blocks with syntax highlighting
+- Tables, lists, and more
+- Instant preview
+
+```javascript
+console.log('Hello, World!');
+```"
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none font-mono text-sm"
+                    ></textarea>
+                </div>
+                
+                <!-- Preview Section -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Preview</label>
+                    <div 
+                        id="preview" 
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl bg-gray-50 min-h-[200px] prose prose-sm max-w-none"
+                    >
+                        <p class="text-gray-400 italic">Preview will appear here...</p>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap gap-4 mt-6">
+                    <button 
+                        id="convert-btn"
+                        class="flex-1 min-w-[200px] bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors shadow-lg hover:shadow-xl"
+                    >
+                        ⬇️ Download PDF
+                    </button>
+                    <button 
+                        id="clear-btn"
+                        class="flex-1 min-w-[200px] bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors"
+                    >
+                        🗑️ Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT THE TOOL -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100 mt-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">About This Markdown to PDF Converter</h2>
+            
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <p class="text-lg">
+                    Our free online <strong>Markdown to PDF converter</strong> allows you to transform your .md files into professionally formatted PDF documents instantly. Whether you're creating documentation, writing technical guides, or preparing reports, this <strong>MD to PDF tool</strong> supports GitHub Flavored Markdown with syntax highlighting, tables, and more.
+                </p>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 mt-8">✨ Key Features</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">✓</span>
+                            <span><strong>GitHub Flavored Markdown:</strong> Full support for GFM syntax including tables, task lists, and strikethrough</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">✓</span>
+                            <span><strong>Code Syntax Highlighting:</strong> Beautiful code blocks with language-specific highlighting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">✓</span>
+                            <span><strong>Live Preview:</strong> See your formatted content in real-time before converting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">✓</span>
+                            <span><strong>Professional Formatting:</strong> Clean, readable PDF output with proper typography</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">✓</span>
+                            <span><strong>Tables & Lists:</strong> Full support for complex tables, ordered, and unordered lists</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">✓</span>
+                            <span><strong>100% Free:</strong> No registration, watermarks, or limitations on usage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">✓</span>
+                            <span><strong>Privacy First:</strong> All conversion happens in your browser - no uploads to servers</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 mt-8">🎯 Why Use Our Markdown to PDF Converter?</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                            <h4 class="font-semibold text-gray-900 mb-2">📚 Documentation</h4>
+                            <p class="text-sm">Convert technical documentation, README files, and API guides to shareable PDFs</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                            <h4 class="font-semibold text-gray-900 mb-2">📝 Note Taking</h4>
+                            <p class="text-sm">Transform your Markdown notes into formatted PDF documents for archiving or sharing</p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                            <h4 class="font-semibold text-gray-900 mb-2">💼 Reports & Proposals</h4>
+                            <p class="text-sm">Create professional reports and proposals from Markdown source</p>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                            <h4 class="font-semibold text-gray-900 mb-2">📖 E-books & Guides</h4>
+                            <p class="text-sm">Generate PDF versions of your tutorials, guides, and educational content</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 mt-8">📝 Supported Markdown Syntax</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-300 rounded-lg">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900 border-b">Element</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900 border-b">Syntax</th>
+                                    <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900 border-b">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 text-sm text-gray-800"><strong>Headings</strong></td>
+                                    <td class="px-6 py-4 text-sm text-gray-800 font-mono"># H1 ## H2 ### H3</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Six levels of headings</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-6 py-4 text-sm text-gray-800"><strong>Bold</strong></td>
+                                    <td class="px-6 py-4 text-sm text-gray-800 font-mono">**bold text**</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Bold formatting</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 text-sm text-gray-800"><strong>Italic</strong></td>
+                                    <td class="px-6 py-4 text-sm text-gray-800 font-mono">*italic text*</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Italic formatting</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-6 py-4 text-sm text-gray-800"><strong>Code</strong></td>
+                                    <td class="px-6 py-4 text-sm text-gray-800 font-mono">`code`</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Inline code</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 text-sm text-gray-800"><strong>Code Block</strong></td>
+                                    <td class="px-6 py-4 text-sm text-gray-800 font-mono">```language```</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Multi-line code with syntax highlighting</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-6 py-4 text-sm text-gray-800"><strong>Links</strong></td>
+                                    <td class="px-6 py-4 text-sm text-gray-800 font-mono">[text](url)</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Hyperlinks</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 text-sm text-gray-800"><strong>Images</strong></td>
+                                    <td class="px-6 py-4 text-sm text-gray-800 font-mono">![alt](url)</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Image embedding</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-6 py-4 text-sm text-gray-800"><strong>Lists</strong></td>
+                                    <td class="px-6 py-4 text-sm text-gray-800 font-mono">- item or 1. item</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Unordered and ordered lists</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 text-sm text-gray-800"><strong>Tables</strong></td>
+                                    <td class="px-6 py-4 text-sm text-gray-800 font-mono">| Header |</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Tables with alignment</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-6 py-4 text-sm text-gray-800"><strong>Blockquotes</strong></td>
+                                    <td class="px-6 py-4 text-sm text-gray-800 font-mono">> quote</td>
+                                    <td class="px-6 py-4 text-sm text-gray-600">Quoted text blocks</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 mt-8">🚀 How to Convert Markdown to PDF</h3>
+                    <ol class="space-y-3 list-decimal list-inside">
+                        <li><strong>Enter Markdown:</strong> Type or paste your Markdown content into the text area</li>
+                        <li><strong>Preview Your Content:</strong> See the formatted output in real-time in the preview section</li>
+                        <li><strong>Click Convert:</strong> Press the "Convert to PDF" button to generate your PDF</li>
+                        <li><strong>Download:</strong> Your PDF will be automatically downloaded to your device</li>
+                    </ol>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 mt-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">🔒 Privacy & Security</h3>
+                    <p>
+                        Your privacy is our priority. This <strong>Markdown to PDF converter</strong> runs entirely in your browser using client-side JavaScript. We don't upload, store, or have access to your Markdown content. Your documents remain completely private and secure on your device.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 mt-8">💡 Tips for Better PDFs</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">•</span>
+                            <span>Use proper heading hierarchy (H1 → H2 → H3) for better document structure</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">•</span>
+                            <span>Include language specifiers in code blocks for syntax highlighting (e.g., ```javascript)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">•</span>
+                            <span>Keep tables simple and readable for better PDF formatting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-3 text-xl">•</span>
+                            <span>Use the preview to check formatting before converting to PDF</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 mt-8">❓ Frequently Asked Questions</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Is this Markdown to PDF converter free?</h4>
+                            <p class="text-sm">Yes! Our tool is 100% free with no registration required, no watermarks, and unlimited conversions.</p>
+                        </div>
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Does it support GitHub Flavored Markdown?</h4>
+                            <p class="text-sm">Absolutely! We support GFM including tables, task lists, strikethrough, and more.</p>
+                        </div>
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Can I convert .md files directly?</h4>
+                            <p class="text-sm">Simply open your .md file in a text editor, copy the content, and paste it into our converter.</p>
+                        </div>
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Is my content stored anywhere?</h4>
+                            <p class="text-sm">No! All conversion happens in your browser. We never see or store your content.</p>
+                        </div>
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">What languages are supported for code highlighting?</h4>
+                            <p class="text-sm">We support popular languages including JavaScript, Python, Java, C++, HTML, CSS, and many more.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-300 mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-12">
+                <!-- Logo -->
+                <div class="col-span-2 sm:col-span-1">
+                    <img src="../assets/abitechpros-logo.png" alt="Abitech Pros" class="h-8 w-auto mb-4 brightness-0 invert" />
+                    <p class="text-sm text-gray-400 mt-4">Free tools for students & developers</p>
+                </div>
+                
+                <!-- Column 1 -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Quick Links</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="../index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="../index.html#tools" class="hover:text-white transition">Tools</a></li>
+                        <li><a href="../about.html" class="hover:text-white transition">About</a></li>
+                        <li><a href="../contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Legal</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="../terms.html" class="hover:text-white transition">Terms</a></li>
+                        <li><a href="../privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="../help.html" class="hover:text-white transition">Help</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Tools</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="../text-counter/" class="hover:text-white transition">Text Counter</a></li>
+                        <li><a href="../qr-code-generator/" class="hover:text-white transition">QR Generator</a></li>
+                        <li><a href="../password-generator/" class="hover:text-white transition">Password Gen</a></li>
+                        <li><a href="../markdown-to-pdf/" class="hover:text-white transition">MD to PDF</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
+                <p>© Copyright for this site: <a href="https://abitechpros.com" class="hover:text-white transition">abitechpros.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Load jsPDF for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Load html2canvas for HTML to canvas conversion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
