@@ -72,5 +72,5 @@ Your ideas and enhancements help make **Abitech Tools** better for everyone!
 
 **Abuzar Siddiqui**
 
-- 🌐 Personal Website: https://abitechpros.com  
-- 🧰 Tools Website: https://tools.abitechpros.com
+- 🌐 Website: https://abitechpros.com  
+- 🧰 Blog Website: https://blog.abitechpros.com
