@@ -3,8 +3,8 @@
 **Abitech Tools** is a collection of fast, free, and privacy-focused online tools for students, developers, and creators.  
 The site includes utilities like text counters, QR generators, password generators, JSON formatters, and more — all running directly in your browser without storing any data.
 
-🌐 **Live Website:** https://tools.abitechpros.com  
-📝 **Main Blog:** https://abitechpros.com  
+🌐 **Live Website:** https://abitechpros.com  
+📝 **Main Blog:** https://blog.abitechpros.com  
 
 ---
 
