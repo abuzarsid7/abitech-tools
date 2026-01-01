@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tools.abitechpros.com/sitemap.xml
+Sitemap: https://abitechpros.com/sitemap.xml
