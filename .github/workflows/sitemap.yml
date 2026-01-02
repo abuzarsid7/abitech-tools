@@ -31,7 +31,7 @@ jobs:
           while IFS= read -r file; do
             clean="${file#./}"
             path="${clean%index.html}"
-            echo "  <url><loc>https://tools.abitechpros.com/${path}</loc></url>" >> sitemap.xml
+            echo "  <url><loc>https://abitechpros.com/${path}</loc></url>" >> sitemap.xml
           done <<< "$(find . -type f -name "index.html")"
 
           echo '</urlset>' >> sitemap.xml
