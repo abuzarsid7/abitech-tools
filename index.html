@@ -50,15 +50,30 @@
 
       <!-- TOOL CARD -->
       <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all cursor-pointer border border-gray-100"
+           onclick="window.location='markdown-to-pdf/'">
+        <div class="mb-4 flex justify-left">
+          <img 
+            src="/assets/markdown-to-pdf.svg" 
+            alt="Markdown to PDF Tool Icon"
+            class="h-12 w-12"
+            loading="lazy"
+          />
+        </div>
+        <h4 class="text-2xl font-bold mb-3 text-gray-900">Markdown to PDF</h4>
+        <p class="text-gray-600">Convert markdown documents to PDF.</p>
+      </div>
+
+      <!-- TOOL CARD -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all cursor-pointer border border-gray-100"
            onclick="window.location='text-counter/'">
         <div class="mb-4 flex justify-left">
-  <img 
-    src="/assets/text-counters.svg" 
-    alt="Text Counter Tool Icon"
-    class="h-12 w-12"
-    loading="lazy"
-  />
-</div>
+          <img 
+            src="/assets/text-counters.svg" 
+            alt="Text Counter Tool Icon"
+            class="h-12 w-12"
+            loading="lazy"
+          />
+        </div>
         <h4 class="text-2xl font-bold mb-3 text-gray-900">Text Counter</h4>
         <p class="text-gray-600">Counts words, characters, and reading time.</p>
       </div>
@@ -66,14 +81,14 @@
       <!-- TOOL CARD -->
       <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all cursor-pointer border border-gray-100"
            onclick="window.location='qr-code-generator/'">
-         <div class="mb-4 flex justify-left">
-  <img 
-    src="/assets/qr-code-generator.svg" 
-    alt="QR Code Generator Tool Icon"
-    class="h-12 w-12"
-    loading="lazy"
-  />
-</div>
+        <div class="mb-4 flex justify-left">
+          <img 
+            src="/assets/qr-code-generator.svg" 
+            alt="QR Code Generator Tool Icon"
+            class="h-12 w-12"
+            loading="lazy"
+          />
+        </div>
         <h4 class="text-2xl font-bold mb-3 text-gray-900">QR Code Generator</h4>
         <p class="text-gray-600">Generate QR codes instantly.</p>
       </div>
@@ -82,30 +97,15 @@
       <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all cursor-pointer border border-gray-100"
            onclick="window.location='password-generator/'">
         <div class="mb-4 flex justify-left">
-  <img 
-    src="/assets/password-generator.svg" 
-    alt="Password Generator Tool Icon"
-    class="h-12 w-12"
-    loading="lazy"
-  />
-</div>
+          <img 
+            src="/assets/password-generator.svg" 
+            alt="Password Generator Tool Icon"
+            class="h-12 w-12"
+            loading="lazy"
+          />
+        </div>
         <h4 class="text-2xl font-bold mb-3 text-gray-900">Password Generator</h4>
         <p class="text-gray-600">Create secure, random passwords.</p>
-      </div>
-
-      <!-- TOOL CARD -->
-      <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all cursor-pointer border border-gray-100"
-           onclick="window.location='markdown-to-pdf/'">
-           <div class="mb-4 flex justify-left">
-  <img 
-    src="/assets/markdown-to-pdf.svg" 
-    alt="Markdown to PDF Tool Icon"
-    class="h-12 w-12"
-    loading="lazy"
-  />
-</div>
-        <h4 class="text-2xl font-bold mb-3 text-gray-900">Markdown to PDF</h4>
-        <p class="text-gray-600">Convert Markdown to PDF documents.</p>
       </div>
 
     </div>
@@ -159,10 +159,10 @@
           Tools
         </h3>
         <ul class="space-y-3 text-sm">
+          <li><a href="/markdown-to-pdf/" class="hover:text-white">Markdown to PDF</a></li>
           <li><a href="/text-counter/" class="hover:text-white">Text Counter</a></li>
           <li><a href="/qr-code-generator/" class="hover:text-white">QR Code Generator</a></li>
-          <li><a href="/password-generator/" class="hover:text-white">Password Generator</a></li>
-          <li><a href="/markdown-to-pdf/" class="hover:text-white">Markdown to PDF</a></li>
+          <li><a href="/password-generator/" class="hover:text-white">Password Generator</a></li>  
         </ul>
       </div>
 
