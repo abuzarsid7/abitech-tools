@@ -21,16 +21,34 @@
 <body class="bg-gray-100 text-gray-800">
 
   <!-- NAVBAR -->
-  <nav class="bg-white shadow-lg px-6 py-3 flex justify-between items-center sticky top-0 z-50">
-    <a href="https://abitechpros.com" class="flex items-center">
-      <img src="../assets/abitechpros-logo.png" alt="Abitech Pros" class="hover:opacity-80 transition" style="height: 45px; width: auto; max-width: 200px; object-fit: contain;" />
-    </a>
+  <nav class="bg-white shadow-lg sticky top-0 z-50 relative">
+    <div class="px-6 py-3 flex justify-between items-center">
+      <a href="https://abitechpros.com" class="flex items-center">
+        <img src="../assets/abitechpros-logo.png" alt="Abitech Pros" class="hover:opacity-80 transition" style="height: 45px; width: auto; max-width: 200px; object-fit: contain;" />
+      </a>
 
-    <div class="space-x-6 hidden md:flex">
-      <a href="/index.html" class="hover:text-blue-600 transition-colors font-medium">Home</a>
-      <a href="/about/" class="hover:text-blue-600 transition-colors font-medium">About</a>
-      <a href="/contact/" class="hover:text-blue-600 transition-colors font-medium">Contact</a>
-      <a href="https://blog.abitechpros.com" class="hover:text-blue-600 transition-colors font-medium" target="_blank">Blog</a>
+      <!-- Desktop Navigation -->
+      <div class="space-x-6 hidden md:flex">
+        <a href="/" class="hover:text-blue-600 transition-colors font-medium">Home</a>
+        <a href="/about/" class="hover:text-blue-600 transition-colors font-medium">About</a>
+        <a href="/contact/" class="hover:text-blue-600 transition-colors font-medium">Contact</a>
+        <a href="https://blog.abitechpros.com" class="hover:text-blue-600 transition-colors font-medium" target="_blank">Blog</a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="hamburger-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none">
+        <span class="hamburger-line w-6 h-0.5 bg-gray-800 transition-all"></span>
+        <span class="hamburger-line w-6 h-0.5 bg-gray-800 transition-all"></span>
+        <span class="hamburger-line w-6 h-0.5 bg-gray-800 transition-all"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+      <a href="/" class="block px-6 py-3 hover:bg-gray-100 hover:text-blue-600 transition-colors font-medium border-b border-gray-200">Home</a>
+      <a href="/about/" class="block px-6 py-3 hover:bg-gray-100 hover:text-blue-600 transition-colors font-medium border-b border-gray-200">About</a>
+      <a href="/contact/" class="block px-6 py-3 hover:bg-gray-100 hover:text-blue-600 transition-colors font-medium border-b border-gray-200">Contact</a>
+      <a href="https://blog.abitechpros.com" class="block px-6 py-3 hover:bg-gray-100 hover:text-blue-600 transition-colors font-medium" target="_blank">Blog</a>
     </div>
   </nav>
 
@@ -311,6 +329,6 @@
     </div>
   </footer>
 
-  <script src="./scripts/app.js"></script>
+  <script src="../scripts/app.js"></script>
 </body>
 </html>
